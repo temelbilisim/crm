@@ -1,7 +1,7 @@
 ### Application ###
 /public/assets/javascripts/application.js
 /public/assets/stylesheets/application.css
-/public/assets/fonts
+/public/assets/fonts/*
 
 ### Laravel ###
 /bootstrap/compiled.php
