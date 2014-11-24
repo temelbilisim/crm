@@ -37,12 +37,20 @@ module.exports = function (grunt) {
                 }
             }
         },
+        copy: {
+            fonts: {
+                expand: true,
+                cwd: './bower_components/bootstrap/fonts/',
+                src: '**',
+                dest: './public/assets/fonts/'
+            }
+        },
         phpunit: {
             classes: {},
             options: {}
         },
         watch: {
-            js_frontend: {
+            application: {
                 files: [
                     './bower_components/jquery/dist/jquery.js',
                     './bower_components/bootstrap/dist/js/bootstrap.js',
@@ -72,9 +80,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-phpunit');
 
     // Task definition
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('build', ['less', 'concat', 'uglify', 'copy']);
+    grunt.registerTask('default', ['build', 'watch']);
 
 };
