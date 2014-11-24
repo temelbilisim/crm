@@ -1,0 +1,6 @@
+{
+  "name": "temelbilisim-crm",
+  "dependencies": {
+    "bootstrap": "~3.3.1"
+  }
+}
